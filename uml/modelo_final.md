@@ -2,8 +2,9 @@
 
 ![Modelo UML final](modelo_final.png)
 
-Codigo mermaid:
+## Código Mermaid
 
+```mermaid
 classDiagram
 
 class Exportable {
@@ -17,15 +18,15 @@ class Producto {
     #_precio_base float
     #_stock_cantidad float
     #_habilitado bool
-    #_unidad_venta UnidadMedida
+    #_unidad_venta UnidadMedida | None
     #_clasificaciones list~ProductoCategoria~
-    #_orden_vidriera int
+    #_orden_vidriera int | None
     +nombre str
     +precio_base float
-    +unidad_venta UnidadMedida
+    +unidad_venta UnidadMedida | None
     +disponible bool
     +precio_publicado str
-    +orden_vidriera int
+    +orden_vidriera int | None
     +habilitar() None
     +deshabilitar() None
     +destacar(orden int) None
@@ -34,7 +35,7 @@ class Producto {
     +categorias() tuple~ProductoCategoria~
     +categoria_principal() Categoria
     +exportar() str
-    +precio_final(cantidad float) float*
+    +precio_final(cantidad float) float
 }
 
 class ProductoSimple {
