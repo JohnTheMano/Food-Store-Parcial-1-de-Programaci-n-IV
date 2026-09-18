@@ -5,5 +5,5 @@ class FichaPuntoDeVenta:
         self._codigo = codigo
         self._detalle = detalle
 
-    def exportar(self) -> str:
+    def exportar(self) -> str:      
         return f"POS|{self._codigo}|{self._detalle}"
